@@ -1,0 +1,36 @@
+import javax.swing.JOptionPane;
+public class Main
+{
+    public static void main( String[] args)
+    {
+        int desejo;
+        String produto1 = "";
+        String quantia1 = "";
+        int quant1 = 0;
+        int contador = 0;
+        String[] lista = new String[5];
+        do {
+            produto1 = JOptionPane.showInputDialog("Digite o nome do produto:");
+            quantia1 = JOptionPane.showInputDialog("Digite a quantia desejada:");
+            lista[contador] = produto1;
+            contador++;
+
+
+            quant1 = Integer.parseInt(quantia1);
+            String[] options = {"Sair", "Ficar"};
+            desejo = JOptionPane.showOptionDialog
+                    (null, "Vai continuar?", "Titulo",
+                            0, 3, null, options, options[0]);
+
+
+        }while (desejo == 1);
+
+        JOptionPane.showMessageDialog(null,"Só para confirmar são "+quantia1 +" "+ produto1+" mesmo?");
+        contador=0;
+
+        do {
+            System.out.println("voce comprou " + lista[contador] + " ");
+            contador++;
+        }while(contador == 5 );
+    }
+}
